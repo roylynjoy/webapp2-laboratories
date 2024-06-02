@@ -1,10 +1,11 @@
 CREATE DATABASE `webapp2-db`;
 
 CREATE TABLE posts(
-    userId INT NOT NULL,
+    userId INT,
     id INT PRIMARY KEY AUTO_INCREMENT,
     title VARCHAR(255),
-    body VARCHAR(255)
+    body VARCHAR(255),  
+    FOREIGN KEY (userId) REFERENCES users(id)
 );
 
 INSERT INTO posts(userId, title, body) VALUES (1, "sunt aut facere repellat provident occaecati excepturi optio reprehenderit", "quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto"),
